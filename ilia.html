@@ -90,7 +90,7 @@
                             <h5>Presentes Infantis ♥</h5>
                             <p>Kit Mamãe e Bebê</p>
                         </div>
-                        <img src="img/logo1.jpg" class="d-block d-md-none w-100 h-25" alt="">
+                        <img src="img/logo3.png" class="d-block d-md-none w-100 h-25" alt="">
                     </div>
                     <div class="carousel-item" data-bs-interval="3000">
                         <img src="img/slides/folhas.png" class="d-none d-md-block w-100" alt="">
@@ -98,15 +98,15 @@
                             <h5>Desejamos a você e sua família um excelente Natal!!! </h5>
                             <p>Saúde e Amor ♥</p>
                         </div>
-                        <img src="img/slides/folhas.png" class="d-block d-md-none w-100 h-25" alt="">
+                        <img src="img/logo3.png" class="d-block d-md-none w-100 h-25" alt="">
                     </div>
                     <div class="carousel-item" data-bs-interval="3000">
-                        <img src="img/slides/flor.png" class="d-none d-md-block w-100" alt="logotipo">
+                        <img src="img/slides/flor.jpg" class="d-none d-md-block w-100" alt="logotipo">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Diversidade</h5>
                             <p>Presenteie quem você ama ♥</p>
                         </div>
-                        <img src="img/slides/flor.png" class="d-block d-md-none w-100 h-25" alt="">
+                        <img src="img/logo3.png" class="d-block d-md-none w-100 h-25" alt="">
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselMain" data-bs-slide="prev">
@@ -121,8 +121,56 @@
             <hr class="mt-3">
         </div>
 
-        <main>
-
+        <main class="flex-fill">
+            <div class="container">
+                <div class="row g-3">
+                    <div class="col-12 col-sm-6">
+                        <img src="img/produtos/Ilia.png" class="img-thumbnail" id="imgProduto">
+                        <br class="clearfix">
+                        <div class="row my-3 gx-3">
+                            <div class="col-3">
+                                <img src="img/produtos/Ilia.png" class="img-thumbnail"
+                                    onclick="trocarImagem(this)">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <h1 class="text-danger">Ilía Deo Parfum</h1>
+                        <br>
+                        <p>
+                            Uma fragrância floral envolvente e feminina para inspirar mulheres de atitude.
+                        </p>
+                        <p>
+                            Ilia Deo Parfum Natura é uma fragrância floral que combina a intensidade das flores brancas com um complexo adocicado de baunilha e musk. Este perfume é harmoniosamente equilibrado com delicadas notas frutadas. Sua composição é enriquecida com um ingrediente natural extraído da paramela, conferindo uma singularidade marcante à fragrância. Ilia Natura é uma expressão de elegância e sofisticação.
+                            <br>
+                            Floral intenso. A combinação de flores brancas com um complexo adocicado e notas levemente frutadas.
+                            <br>
+                        <h2>R$ 159,90</h2>
+                        <br>
+                        <h4>Conteúdo</h4>
+                        <p>
+                            1 Deo Parfum Ilía Feminino - 50 ml
+                        </p>
+                        <!-- Botão adicionar produto -->
+                        <div data-app="product.quantity" id="quantidade">
+                            <span id="span_erro_carrinho" class="blocoAlerta" style="display:none;">variação do
+                                produto</span>
+                            <label>Quantidade:</label>
+                            <input type="button" id="plus" value='-' onclick="process(-1)" />
+                            <input id="quant" name="quant" class="text" size="1" type="text" value="1" maxlength="5" />
+                            <input type="button" id="minus" value='+' onclick="process(1)">
+                        </div>
+                        <br>
+                        <button class="btn btn-lg btn-danger mb-3 mb-xl-0 me-2">
+                            <i class="bi-cart"></i> Adicionar ao Carrinho
+                        </button>
+                        <button class="btn btn-lg btn-outline-danger">
+                            <i class="bi-heart"></i> Adicionar aos Favoritos
+                        </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </main>
 
         <div>
@@ -145,7 +193,8 @@
                             <a href="contato.html" class="text-decoration-none text-light">Contato pelo Site</a>
                             <br>
                             Email: <a href="mailto:hass.vivian@gmail.com" class="text-decoration-none text-light">
-                                hass.vivian@gmail.com</a> <br>
+                                hass.vivian@gmail.com</a>
+                            <br>
                             Telefone: <a href="phone:4798833-7348" class="text-decoration-none text-light">(47) 9
                                 8833-7348</a>
                         </div>
@@ -155,12 +204,14 @@
 
         </div>
 
-
-
         </main>
 
 
         <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
-</body>
+        function process(quant){
+        var value = parseInt(document.getElementById("quant").value);
+        value+=quant;
+        if(value < 1){ document.getElementById("quant").value=1; }else{ document.getElementById("quant").value=value; }
+            } </body>
 
 </html>
